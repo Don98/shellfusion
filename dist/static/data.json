@@ -1,0 +1,70 @@
+{
+    "Answers": [
+        {
+            "Command": "dev",
+            "Top-3 Scripts": [
+                "ul_43013: title_num=2\n  from_cell=1\n# physical DVD\n  to_cell=\"$(dvdxchap -t $title_num  /dev/dvd | sed -n 's/^CHAPTER\\([0-9]\\+\\).*/\\1/p' | sed -n '$p')\"\n# DVD .iso image  \n  to_cell=\"$(dvdxchap -t $title_num \"$dvd_iso\"| sed -n 's/^CHAPTER\\([0-9]\\+\\).*/\\1/p' | sed -n '$p')\"",
+                "ul_77834: ddrescue -n -b2048 /dev/cdrom cdimage mapfile\nddrescue -d -r1 -b2048 /dev/cdrom cdimage mapfile",
+                "au_330860: dd if=/dev/dvd of=/path/dvd.iso"
+            ],
+            "Top-3 Similar Questions": [
+                "ul_43013: Rip chapters of a DVD to separate files",
+                "ul_77834: How to rip a scratched DVD-Video? (a \"cdparanoia for DVDs\")",
+                "au_330860: Ripping DVDs with menu"
+            ]
+        },
+        {
+            "Command": "sudo",
+            "Top-3 Scripts": [
+                "au_269946: sudo apt-get audacity",
+                "au_17922: sudo apt-get install acetoneiso\n\nsudo aptitude install-get install acetoneiso\n\nsudo apt-get install bchunk ccd2iso mdf2iso nrg2iso\n\nsudo aptitude install bchunk ccd2iso mdf2iso nrg2iso",
+                "au_321633: sudo apt-get install dvdstyler"
+            ],
+            "Top-3 Similar Questions": [
+                "au_269946: How to rip an audio track in flac from a DVD video?",
+                "au_17922: How can I rip an audio CD to an ISO image?",
+                "au_321633: How to create DVD from a video file?"
+            ]
+        },
+        {
+            "Command": "to",
+            "Top-3 Scripts": [
+                "ul_175090: min(«W»,               # take the minimum [lesser of] target width and...\n  trunc(               # the truncation of (round to integer towards 0)\n    («H»*«PAR⁻¹»*dar)  # calculate the wanted output width, see note above\n    / 2 + 0.5) * 2     # and get the nearest even number to that\n))",
+                "au_690880: find /path/to/your/music -iname '*.mp3' -print0 | xargs -0 mp3info -rm -p '%r:%F\\n' > transcode.kbps\n\n128:/path/to/your/music/dir1/file.mp3\n256:/path/to/your/music/dirX/fileX.mp3\n320:/path/to/your/music/dirY/fileA.mp3",
+                "ul_35945: Device seems to be: Generic mmc2 DVD-R/DVD-RW."
+            ],
+            "Top-3 Similar Questions": [
+                "ul_175090: Burning a video file with non-standard aspect ratio to DVD",
+                "au_690880: Convert all audio files to low quality in Ubuntu",
+                "au_39148: rip (transcode) multiple titles, from a tv series dvd, automatically"
+            ]
+        },
+        {
+            "Command": "apt-get",
+            "Top-3 Scripts": [
+                "au_269946: sudo apt-get audacity",
+                "au_17922: sudo apt-get install acetoneiso\n\nsudo apt-get install bchunk ccd2iso mdf2iso nrg2iso",
+                "au_321633: sudo apt-get install dvdstyler"
+            ],
+            "Top-3 Similar Questions": [
+                "au_269946: How to rip an audio track in flac from a DVD video?",
+                "au_17922: How can I rip an audio CD to an ISO image?",
+                "au_321633: How to create DVD from a video file?"
+            ]
+        },
+        {
+            "Command": "of",
+            "Top-3 Scripts": [
+                "au_330860: dd if=/dev/dvd of=/path/dvd.iso",
+                "au_581033: dd if=/dev/cdrom of=/tmp/Vicibox_test.iso\nmd5sum /tmp/Vicibox_test.iso",
+                "ul_175090: min(«W»,               # take the minimum [lesser of] target width and...\n  trunc(               # the truncation of (round to integer towards 0)\n    («H»*«PAR⁻¹»*dar)  # calculate the wanted output width, see note above\n    / 2 + 0.5) * 2     # and get the nearest even number to that\n))"
+            ],
+            "Top-3 Similar Questions": [
+                "au_330860: Ripping DVDs with menu",
+                "au_581033: How to compare a DVD to an ISO?",
+                "ul_175090: Burning a video file with non-standard aspect ratio to DVD"
+            ]
+        }
+    ],
+    "Query": "How can I increase a partition's size?\n"
+}
