@@ -20,9 +20,10 @@ export default {
   data () {
     return {
       msg: 'shellFusion',
-      path: 'ws://localhost:8088/',
+      // path: 'ws://211.66.130.46:20004/',
+      path: 'ws://127.0.0.1:20004/',
       ws: {},
-      resultFromServer: new Array()
+      resultFromServer: []
     }
   },
   methods: {
@@ -37,8 +38,8 @@ export default {
       }
       console.log(queryContent)
       // 开始查询
-      this.resultFromServer = new Array()
-      this.ws = new WebSocket(this.path);
+      this.resultFromServer = []
+      this.ws = new WebSocket(this.path)
       this.ws.onopen = () => {
         console.log('ws连接状态：' + this.ws.readyState)
         // alert("连接成功")
@@ -48,12 +49,15 @@ export default {
       // 接听服务器发回的信息并处理展示
       this.ws.onmessage = (data) => {
         console.log('接收到来自服务器的消息：')
-        // console.log(data['data'])
+        console.log(data['data'])
         var tmp = JSON.parse(data['data'])
-        for(let i in tmp['Answers']){
-            tmp['Answers'][i]["id"] = i
-            this.resultFromServer.push(tmp['Answers'][i])
-            // console.log(tmp['Answers'][i])
+        console.log(tmp)
+        console.log(typeof tmp)
+        console.log(tmp['Answers'])
+        console.log(typeof tmp['Answers'])
+        for (let i in tmp['Answers']) {
+          tmp['Answers'][i]['id'] = i
+          this.resultFromServer.push(tmp['Answers'][i])
         }
       }
       // 监听连接关闭事件
@@ -85,16 +89,13 @@ export default {
       // window.open('./one_testing_page')
     },
     // 回车键搜索
-    searchEnterFun:function(e){
-    // 使用 which 和 keyCode 属性来解决兼容问题
-    var keyCode = window.event? e.keyCode:e.which;
-    var val = e.target.value;
-    // console.log('回车搜索',keyCode,e);
-    if(keyCode == 13 && val){
-        // alert(val);
-        this.to_query();
+    searchEnterFun: function (e) {
+      var keyCode = window.event ? e.keyCode : e.which
+      var val = e.target.value
+      if (keyCode === 13 && val) {
+        this.to_query()
+      }
     }
-}
   }
 }
 </script>
