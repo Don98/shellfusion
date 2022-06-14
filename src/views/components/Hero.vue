@@ -19,11 +19,11 @@
                         <img src="img/brand/3.png" style="width: 200px;" class="img-fluid">
                         <p class="lead text-black-50 mt-4 mb-5">It's Free and Open Source.</p>
                           <div class="input-group-append text-center">
-                            <base-input placeholder="What is the correct way to completely remove an application?" style="width: 100%"
+                            <base-input placeholder=placeholder="What is the correct way to completely remove an application?" style="width: 100%"
                                         addon-left-icon="ni ni-zoom-split-in" v-model = 'query_content'
                                         v-on:focus="focusCustomer" v-on:blur="blurCustomer">
                             </base-input>
-                            <base-button type="primary" style="height:45px" placeholder="What is the correct way to completely remove an application?" id = 'query' v-on:click="to_query" @keyup.enter="searchEnterFun">Search</base-button>
+                            <base-button type="primary" style="height:45px"  id = 'query' v-on:click="to_query" @keyup.enter="searchEnterFun">Search</base-button>
                           </div>
                       <div style="clear: both;overflow: auto;height:700px;width: 105%;position: relative;right: 35px">
                           <ul id = "list">
