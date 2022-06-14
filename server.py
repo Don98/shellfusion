@@ -5,7 +5,7 @@ import json
 
 async def echo(websocket,path):
     async for message in websocket:
-        with open("./my-project/static/data.json","r",encoding="utf-8") as f:
+        with open("./static/data.json","r",encoding="utf-8") as f:
             # data = json.load(f)
             data = f.read()
         await websocket.send(str(data))
