@@ -23,7 +23,7 @@
                                         addon-left-icon="ni ni-zoom-split-in" v-model = 'query_content'
                                         v-on:focus="focusCustomer" v-on:blur="blurCustomer">
                             </base-input>
-                            <base-button type="primary" style="height:45px" id = 'query' v-on:click="to_query">Search</base-button>
+                            <base-button type="primary" style="height:45px" placeholder="What is the correct way to completely remove an application?" id = 'query' v-on:click="to_query" @keyup.enter="searchEnterFun">Search</base-button>
                           </div>
                       <div style="clear: both;overflow: auto;height:700px;width: 105%;position: relative;right: 35px">
                           <ul id = "list">
@@ -90,10 +90,10 @@ export default {
   methods: {
     to_query: function () {
       // 点击搜索时候的操作，
-      if (this.query_content === undefined) {
-        this.query_content = 'What is the correct way to completely remove an application?'
+	  let queryContent = "What is the correct way to completely remove an application?"
+      if (!(this.query_content === undefined || queryContent === '')) {
+        queryContent = this.query_content
       }
-      let queryContent = this.query_content.replace(/\s+/g, '')
       if (queryContent === '') {
         this.query_content = 'What is the correct way to completely remove an application?'
       }
@@ -148,6 +148,14 @@ export default {
       e = e.split("_")
       window.open(this.queryUrl_dict[e[0]] + e[1] + "/")
     },
+    // 回车键搜索
+    searchEnterFun: function (e) {
+      var keyCode = window.event ? e.keyCode : e.which
+      var val = e.target.value
+      if (keyCode === 13 && val) {
+        this.to_query()
+      }
+    }
   }
 };
 </script>
