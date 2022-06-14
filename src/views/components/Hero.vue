@@ -94,9 +94,6 @@ export default {
       if (!(this.query_content === undefined || queryContent === '')) {
         queryContent = this.query_content
       }
-      if (queryContent === '') {
-        this.query_content = 'What is the correct way to completely remove an application?'
-      }
       console.log(queryContent)
       // 开始查询
       this.resultFromServer = new Array()
